@@ -1,5 +1,5 @@
 
-public class MyLinkedList<T> {
+public class MyLinkedList<T> implements MyList<T> {
     private Node<T> head;
     private Node<T> current;
     private int size;

@@ -1,4 +1,4 @@
-public class MyArrayList<T> {
+public class MyArrayList<T> implements MyList<T> {
     private static final int DEFAULT_ARRAY_LENGTH = 8;
     private Object[] array = new Object[DEFAULT_ARRAY_LENGTH];
     private int size;
@@ -15,9 +15,7 @@ public class MyArrayList<T> {
     }
 
     public void remove(int index) {
-        if ( index < 0 || index >= this.size) {
-            throw new ArrayIndexOutOfBoundsException("Index Error");
-        }
+        checkIndex(index);
 
         this.size = 0;
         Object[] newArray = new Object[array.length];
@@ -44,10 +42,14 @@ public class MyArrayList<T> {
     }
 
     public T get(int index) {
+        checkIndex(index);
+
+        return (T) this.array[index];
+    }
+
+    private void checkIndex(int index) {
         if ( index < 0 || index >= this.size) {
             throw new ArrayIndexOutOfBoundsException("Index Error");
         }
-
-        return (T) this.array[index];
     }
 }

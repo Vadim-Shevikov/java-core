@@ -1,15 +1,26 @@
-public class MyHashMap<K, V> {
-    private Node<K, V> head;
+public class MyHashMap<K, V> implements MyCollection {
+    private Node<K, V>[] nodes;
     private int size;
+    private final int CAPACITY = 100000;
+
+    public MyHashMap() {
+        nodes = new Node[CAPACITY];
+    }
+
+    private int indexForKey(K key) {
+        return key == null ? 0 : Math.abs(key.hashCode() % CAPACITY);
+    }
 
     public void put(K key, V value) {
-        if (head == null) {
-            head = new Node<>(key, value);
+        int index = indexForKey(key);
+
+        if (nodes[index] == null) {
+            nodes[index] = new Node<>(key, value);
             size++;
             return;
         }
 
-        Node<K, V> node = head;
+        Node<K, V> node = nodes[index];
 
         while (node.next != null) {
             if (node.key.equals(key)) {
@@ -29,7 +40,9 @@ public class MyHashMap<K, V> {
     }
 
     public V get(K key) {
-        Node<K, V> node = head;
+        int index = indexForKey(key);
+
+        Node<K, V> node = nodes[index];
 
         while (node != null && !node.key.equals(key)) {
             node = node.next;
@@ -39,15 +52,18 @@ public class MyHashMap<K, V> {
     }
 
     public void remove(K key) {
-        if (head == null) return;
+        int index = indexForKey(key);
+        Node<K, V> node = nodes[index];
 
-        if (head.key.equals(key)) {
-            head = head.next;
-            size--;
+        if (node == null) {
             return;
         }
 
-        Node<K, V> node = head;
+        if (node.key.equals(key)) {
+            nodes[index] = node.next;
+            size--;
+            return;
+        }
 
         while (node.next != null) {
             if (node.next.key.equals(key)) {
@@ -60,7 +76,7 @@ public class MyHashMap<K, V> {
     }
 
     public void clear() {
-        head = null;
+        nodes = new Node[CAPACITY];
         size = 0;
     }
 
