@@ -1,7 +1,7 @@
 public class MyHashMap<K, V> implements MyCollection {
     private Node<K, V>[] nodes;
     private int size;
-    private final int CAPACITY = 100000;
+    private int CAPACITY = 16;
 
     public MyHashMap() {
         nodes = new Node[CAPACITY];
@@ -12,6 +12,19 @@ public class MyHashMap<K, V> implements MyCollection {
     }
 
     public void put(K key, V value) {
+        if (size == nodes.length) {
+            CAPACITY = CAPACITY * 2;
+            Node<K, V>[] newNodes = new Node[CAPACITY];
+
+            for (Node<K, V> node : nodes) {
+                if (node != null) {
+                    newNodes[indexForKey(node.key)] = node;
+                }
+            }
+
+            nodes = newNodes;
+        }
+
         int index = indexForKey(key);
 
         if (nodes[index] == null) {
