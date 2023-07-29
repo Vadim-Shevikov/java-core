@@ -1,12 +1,12 @@
-public class Main {
+public class MainModule9 {
     static private final int count = 1000000;
 
     public static void main(String[] args) {
-        Main.showMyArrayListExample();
-        Main.showMyLinkedListExample();
-        Main.showMyQueueExample();
-        Main.showMyStackExample();
-        Main.showMyHashMapExample();
+        MainModule9.showMyArrayListExample();
+        MainModule9.showMyLinkedListExample();
+        MainModule9.showMyQueueExample();
+        MainModule9.showMyStackExample();
+        MainModule9.showMyHashMapExample();
     }
 
     static void showListExamples(MyList<Integer> collection) {
@@ -33,7 +33,7 @@ public class Main {
 
         MyList<Integer> collection = new MyArrayList<>();
 
-        Main.showListExamples(collection);
+        MainModule9.showListExamples(collection);
     }
     static void showMyLinkedListExample() {
         System.out.println(" ");
@@ -41,7 +41,7 @@ public class Main {
 
         MyList<Integer> collection = new MyLinkedList<>();
 
-        Main.showListExamples(collection);
+        MainModule9.showListExamples(collection);
     }
 
     static void showMyQueueExample() {
