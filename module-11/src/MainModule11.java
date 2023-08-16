@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import task1.Task1;
@@ -9,7 +8,7 @@ import task3.Task3;
 import task4.Task4;
 import task5.Task5;
 
-public class Main {
+public class MainModule11 {
     public static void main(String[] args) {
 
         System.out.println("Task1. Add index to names and return joined string: ");
