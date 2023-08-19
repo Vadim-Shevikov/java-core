@@ -6,11 +6,15 @@
       <sourceFolder url="file://$MODULE_DIR$/module-9/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/module-11/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/module-12/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/module-13/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/module-9/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/module-9/out/production" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="gson-2.10.1" level="project" />
+    <orderEntry type="library" name="jsoup-1.16.1" level="project" />
+    <orderEntry type="library" name="gson-2.10.1 (2)" level="project" />
+    <orderEntry type="library" name="lombok" level="project" />
   </component>
 </module>

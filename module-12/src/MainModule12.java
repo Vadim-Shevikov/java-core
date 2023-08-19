@@ -1,7 +1,7 @@
 import task1.TimeTracker;
 import task2.ThreadsTest;
 
-public class Main {
+public class MainModule12 {
     public static void main(String[] args) {
         System.out.println("Task1. Time Tracking: ");
         TimeTracker.run();
